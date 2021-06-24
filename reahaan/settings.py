@@ -100,7 +100,7 @@ DATABASES = {
             'NAME': config('db_name'),
             'ENFORCE_SCHEMA': config('enforceschema'),
             'CLIENT': {
-                'host': config('host')
+                'host': config('MONGODB_URI')
             }  
         }
 }
