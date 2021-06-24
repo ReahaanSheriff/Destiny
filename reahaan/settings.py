@@ -98,7 +98,7 @@ DATABASES = {
         'default': {
             'ENGINE': 'djongo',
             'NAME': 'travello',
-            'ENFORCE_SCHEMA': FALSE,
+            'ENFORCE_SCHEMA': 'FALSE',
             'CLIENT': {
                 'host': 'mongodb+srv://mongob:mongodb@cluster0.bdqcc.mongodb.net/travello?retryWrites=true&w=majority'
             }  
