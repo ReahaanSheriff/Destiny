@@ -22,11 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = '0#(bta&qe_+$u=)*y92n&^#8sb$^8jcd10bk=0v5%#3r1&l_nm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
-
+DEBUG = True
 ALLOWED_HOSTS = ['https://travellodestiny.herokuapp.com/']
 
 
@@ -96,11 +95,11 @@ WSGI_APPLICATION = 'reahaan.wsgi.application'
 # mongo atlas connection
 DATABASES = {
         'default': {
-            'ENGINE': config('engine'),
-            'NAME': config('db_name'),
-            'ENFORCE_SCHEMA': config('enforceschema'),
+            'ENGINE': 'djongo',
+            'NAME': 'travello',
+            'ENFORCE_SCHEMA': FALSE,
             'CLIENT': {
-                'host': config('host')
+                'host': 'mongodb+srv://mongob:mongodb@cluster0.bdqcc.mongodb.net/travello?retryWrites=true&w=majority'
             }  
         }
 }
