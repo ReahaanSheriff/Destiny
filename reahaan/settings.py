@@ -26,7 +26,7 @@ SECRET_KEY = '0#(bta&qe_+$u=)*y92n&^#8sb$^8jcd10bk=0v5%#3r1&l_nm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['https://travellodestiny.herokuapp.com/']
+ALLOWED_HOSTS = ['travellodestiny.herokuapp.com']
 
 
 # Application definition
