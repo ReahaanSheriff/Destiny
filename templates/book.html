@@ -1,0 +1,59 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Travello template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+</head>
+
+<body style="background-image:url({% static '/images/home_slider.jpg' %});">
+    <div class="logo"><a href="{% url 'index' %}" style="margin-left:100px;">Home</a></div>
+    <div class="container" style="margin-top:100px;margin-left:300px;margin-right: 0;">
+        <h3>Get Price</h3>
+        <form action="{% url 'book' dest.id %}" method="POST">
+
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="fromdate" class="form-control" placeholder="from date" style="width:50%"
+                    required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="todate" class="form-control" placeholder="to date" style="width:50%" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="nos" class="form-control" placeholder="no of persons" style="width:50%"
+                    required>
+            </div>
+            {% if user.is_authenticated %}
+            {% if user.username == 'admin' %}
+            <input type="text" name="price" placeholder="Enter price">
+            {% endif %}
+            <input type="submit" class="btn btn-success">
+        </form>
+        {% endif %}
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+        <script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+        <script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+        <script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+        <script src="{% static 'plugins/easing/easing.js' %}"></script>
+        <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
